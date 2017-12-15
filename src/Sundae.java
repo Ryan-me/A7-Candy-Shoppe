@@ -6,22 +6,42 @@
 
 /**
  *
- * @author CHANGE_THIS_TO_YOUR_NAME
+ * @author Ryan Messenger
  */
-public class Sundae{
+public class Sundae extends IceCream{
+    private int cost;
+    private String toppingName;
+    private int toppingCost;
     
-
     
-    public Sundae(String icName, int icCost, String toppingName, int toppingCost)
-    {
-       
+    public Sundae(String icName, int icCost, String toppingName, int toppingCost){
+            super(icName,icCost);
+            this.cost = icCost;
+            this.toppingName = toppingName;
+            this.toppingCost = toppingCost;
     }
     
 
     
-    public String toString()
-    {
-        
+    public String toString(){
+        String receipt = "";
+        receipt += Sundae.super.getName()+ " with";
+        receipt += "\n"+this.toppingName;
+        int cost = Sundae.this.getCost();
+        String costs = DessertShoppe.cents2dollarsAndCents(cost);
+        for (int i = this.toppingName.length(); i < 30- costs.length(); i++) {
+            receipt += " ";
+        }
+        receipt += costs;
+        return receipt;
     }
-    
+    /**
+ * get the price of how many sundaes 
+ * @return the price of amount of sundaes
+ */
+    @Override
+    public int getCost() {
+        int cost = this.cost+ this.toppingCost;
+        return cost;
+    }
 }
