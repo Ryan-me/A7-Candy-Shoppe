@@ -11,6 +11,7 @@
 public class Cookie extends DessertItem{
     private int numberOf;
     private int pricePer12;
+    private int number12;
     
     /**
      * the constructor
@@ -22,6 +23,7 @@ public class Cookie extends DessertItem{
         super(name);
         this.numberOf = number;
         this.pricePer12 = pricePer12;
+        this.number12 = 0;
     }
 
     /**
@@ -46,8 +48,13 @@ public class Cookie extends DessertItem{
  */
     @Override
     public int getCost() {
-        int cost = 12/this.numberOf;
+        int cost= 0;
+            while(this.numberOf > 12){
+               this.numberOf =this.numberOf - 12;
+               this.number12++;
+            }
+        cost = 12/this.numberOf;
         cost = this.pricePer12/cost;
-        return cost;
+        return cost+(this.numberOf*this.number12);
             }
 }
