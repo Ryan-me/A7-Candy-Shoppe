@@ -10,7 +10,11 @@
  */
 public class IceCream extends DessertItem{
     private int cost;
-
+    /**
+     * constructor for the cookie
+     * @param name send to the super class
+     * @param cost of one icecream
+     */
     public IceCream(String name, int cost){
         super(name);
         this.cost = cost;

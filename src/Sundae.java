@@ -13,7 +13,13 @@ public class Sundae extends IceCream{
     private String toppingName;
     private int toppingCost;
     
-    
+    /**
+     * constructor
+     * @param icName name of the ice cream sent to the super class
+     * @param icCost cost of the ice cream sent to the super class
+     * @param toppingName name of the topping
+     * @param toppingCost name of the topping
+     */
     public Sundae(String icName, int icCost, String toppingName, int toppingCost){
             super(icName,icCost);
             this.cost = icCost;
@@ -22,7 +28,10 @@ public class Sundae extends IceCream{
     }
     
 
-    
+    /**
+     * 
+     * @return 
+     */
     public String toString(){
         String receipt = "";
         receipt += Sundae.super.getName()+ " with";
