@@ -31,7 +31,7 @@ public class Cookie extends DessertItem{
      * @return the formatted string
      */
     public String toString(){
-        String receipt = this.numberOf+" @ $"+DessertShoppe.cents2dollarsAndCents(this.pricePer12)+"/dz";
+        String receipt = this.numberOf+" @ $"+DessertShoppe.cents2dollarsAndCents(this.pricePer12)+" /dz";
         receipt += "\n"+Cookie.super.getName();
         int cost = Cookie.this.getCost();
         String costs = DessertShoppe.cents2dollarsAndCents(cost);

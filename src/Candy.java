@@ -27,7 +27,7 @@ public class Candy extends DessertItem{
  * @return the string of the formatted candy
  */
     public String toString(){
-        String receipt = this.lbs+" lbs. @ $"+DessertShoppe.cents2dollarsAndCents(this.costLbs)+"/lb.";
+        String receipt = this.lbs+" lbs. @ $"+DessertShoppe.cents2dollarsAndCents(this.costLbs)+" /lb.";
         receipt += "\n"+Candy.super.getName();
         int cost = Candy.this.getCost();
         String costs = DessertShoppe.cents2dollarsAndCents(cost);

@@ -34,11 +34,11 @@ public class Sundae extends IceCream{
      */
     public String toString(){
         String receipt = "";
-        receipt += Sundae.super.getName()+ " with";
-        receipt += "\n"+this.toppingName;
+        receipt += this.toppingName +" Sundae"+ " with";
+        receipt += "\n"+Sundae.super.getName();
         int cost = Sundae.this.getCost();
         String costs = DessertShoppe.cents2dollarsAndCents(cost);
-        for (int i = this.toppingName.length(); i < 30- costs.length(); i++) {
+        for (int i = Sundae.super.getName().length(); i < 30- costs.length(); i++) {
             receipt += " ";
         }
         receipt += costs;
